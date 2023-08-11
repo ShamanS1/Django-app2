@@ -7,6 +7,7 @@ from django.views.static import serve
 
 re_path(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
 re_path(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
+re_path(r'^static/(?P<path>.*)$', serve,{'document_file': settings.STATICFILES_DIRS}),
 urlpatterns = [
     path('', views.index, name='index'),
     
